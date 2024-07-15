@@ -31,7 +31,7 @@ allure-results/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-!**/src/test/**/java/UserTests
+!**/src/test/**/java/UserTests.java
 ### VS Code ###
 .vscode/
 
