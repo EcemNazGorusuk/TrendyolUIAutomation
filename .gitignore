@@ -3,7 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 allure-results/
-
+src/test/java/UserTests.java
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
@@ -38,5 +38,3 @@ build/
 ### Mac OS ###
 .DS_Store
 
-# UserTests.java dosyasını gizle
-TrendyolUIAutomation/src/test/java/UserTests.java
