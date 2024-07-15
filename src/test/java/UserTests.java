@@ -10,6 +10,7 @@ public class UserTests extends BaseLibrary {
     LoginPage loginPage = new LoginPage();
     HomePage homePage = new HomePage();
 
+    HomePage homePage = new HomePage();
 
     //test senaryosu için login successful metodu:
     @Test(description ="Başarılı Login Kullanıcı Giriş Kontrolü")  // import org.junit.Test;  bunun yerine bunu kullan ---->   import org.testng.annotations.Test;
