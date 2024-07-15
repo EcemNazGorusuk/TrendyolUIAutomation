@@ -2,6 +2,8 @@ import Base.BaseTest;
 import Pages.HomePage;
 import Pages.LoginPage;
 import org.testng.annotations.Test;
+
+
 //BaseTests classımız bizim parent classımız olduğu için onun temel özelliklerini, child (sub) class olan bu classta kullanıcaz (inheritance)
 //böylece Basetests içindeki ögeleri ( @before , @after ) doğrudan burada kullanabiliriz
 
@@ -17,7 +19,7 @@ public class UserTests extends BaseTest {
 
     @Test(description ="Başarılı Login Kullanıcı Giriş Kontrolü")
     public void loginSuccessful() throws InterruptedException {
-        //email ve password alanlarına erişimi şu inheritance düzeni sağlıyor ---> BaseLibrary > Data  > BaseTests  > UserTests
+        //email ve password alanlarına erişimi şu inheritance düzeni sağlıyor --->  Data  > BaseLibrary > BaseTests  > UserTests
         loginPage.emailDoldur(email); //loginPage'in türündeki bu metodu BaseLibrary'deki driver & Data'daki email ile doldurulur
         loginPage.passwordDoldur( password);  //loginPage'in türündeki bu metodu BaseLibrary'deki driver & Data'daki password ile doldurulur
         loginPage.clickLoginButton();   //loginPage'in türündeki bu metodu BaseLibrary'deki driver ile doldurulur
