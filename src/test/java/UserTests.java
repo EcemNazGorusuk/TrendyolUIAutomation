@@ -1,11 +1,11 @@
-import Base.BaseLibrary;
+import Base.BaseTest;
 import Pages.HomePage;
 import Pages.LoginPage;
 import org.testng.annotations.Test;
 //BaseTests classımız bizim parent classımız olduğu için onun temel özelliklerini, child (sub) class olan bu classta kullanıcaz (inheritance)
 //böylece Basetests içindeki ögeleri ( @before , @after ) doğrudan burada kullanabiliriz
 
-public class UserTests extends BaseLibrary {
+public class UserTests extends BaseTest {
 
     LoginPage loginPage = new LoginPage();
     HomePage homePage = new HomePage();

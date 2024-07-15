@@ -1,6 +1,6 @@
 package Pages;
 //Login sayfasına ait gerekli tüm kodlar burada olacak
-import Base.BaseTest;
+import Base.BaseLibrary;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
   * Bu, metodu zincirleme (method chaining) için kullanmanıza olanak tanır; bu sayede birden fazla metoda art arda çağrı yapabiliriz.
  **/
 
-public class LoginPage extends BaseTest {
+public class LoginPage extends BaseLibrary {
 
 
     public LoginPage emailDoldur(String email){

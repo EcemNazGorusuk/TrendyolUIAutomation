@@ -1,7 +1,7 @@
 package Pages;
 //Home sayfasına ait gerekli tüm kodlar burada olacak
 
-import Base.BaseTest;
+import Base.BaseLibrary;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
  * Bu, metodu zincirleme (method chaining) için kullanmanıza olanak tanır; bu sayede birden fazla metoda art arda çağrı yapabiliriz.
  **/
 
-public class HomePage extends BaseTest {
+public class HomePage extends BaseLibrary {
 
     public HomePage hesabimControl(){
         //LoginPage türündeki metod
