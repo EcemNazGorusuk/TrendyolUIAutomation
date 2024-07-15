@@ -10,10 +10,12 @@ public class UserTests extends BaseLibrary {
     LoginPage loginPage = new LoginPage();
     HomePage homePage = new HomePage();
 
-    HomePage homePage = new HomePage();
+
 
     //test senaryosu için login successful metodu:
-    @Test(description ="Başarılı Login Kullanıcı Giriş Kontrolü")  // import org.junit.Test;  bunun yerine bunu kullan ---->   import org.testng.annotations.Test;
+    // import org.junit.Test;  bunun yerine bunu kullan ---->   import org.testng.annotations.Test;
+
+    @Test(description ="Başarılı Login Kullanıcı Giriş Kontrolü")
     public void loginSuccessful() throws InterruptedException {
         //email ve password alanlarına erişimi şu inheritance düzeni sağlıyor ---> BaseLibrary > Data  > BaseTests  > UserTests
         loginPage.emailDoldur(email); //loginPage'in türündeki bu metodu BaseLibrary'deki driver & Data'daki email ile doldurulur
@@ -27,7 +29,7 @@ public class UserTests extends BaseLibrary {
         */
 
        //trendyol sayasında "Giriş yap" textinin login olunca "Hesabım" textine dönüşüp dönüşmediğinin kontrolü için: getText()  (bekleme de eklenmeli)
-        sleepThread(3000); //* throws InterruptedException  -> çok önemli
+        sleepThread(4000); //* throws InterruptedException  -> çok önemli
         homePage.hesabimControl();
     }
 
