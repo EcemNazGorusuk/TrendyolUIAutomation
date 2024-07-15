@@ -12,7 +12,7 @@ allure-results/
 *.iws
 *.iml
 *.ipr
-UserTests.java
+
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -31,7 +31,7 @@ UserTests.java
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
+!**/src/test/**/java/UserTests
 ### VS Code ###
 .vscode/
 
