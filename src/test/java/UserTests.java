@@ -2,7 +2,6 @@ import Base.BaseLibrary;
 import Pages.HomePage;
 import Pages.LoginPage;
 import org.testng.annotations.Test;
-
 //BaseTests classımız bizim parent classımız olduğu için onun temel özelliklerini, child (sub) class olan bu classta kullanıcaz (inheritance)
 //böylece Basetests içindeki ögeleri ( @before , @after ) doğrudan burada kullanabiliriz
 
