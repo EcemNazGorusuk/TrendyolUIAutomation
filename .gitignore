@@ -31,9 +31,12 @@ allure-results/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-!**/src/test/**/java/UserTests.java
+
 ### VS Code ###
 .vscode/
 
 ### Mac OS ###
 .DS_Store
+
+# UserTests.java dosyasını gizle
+TrendyolUIAutomation/src/test/java/UserTests.java
