@@ -8,7 +8,7 @@ public class MainPage extends BaseLibrary {
 
     public MainPage clickKabulEtButton() throws InterruptedException {
       //elemanın gelmesi durumunda tıklanacak,gelmemesi durumuda tıklanmayacak:
-        sleepThread(4000);
+        sleepThread(4000); //önemli
         WebElement element=driver.findElement(By.id("onetrust-accept-btn-handler")); //[id="onetrust-accept-btn-handler"]
         if(element.isDisplayed())
            driver.findElement(By.id("onetrust-accept-btn-handler")).click(); //
