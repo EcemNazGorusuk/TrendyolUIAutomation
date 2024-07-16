@@ -1,9 +1,10 @@
 import Base.BaseTest;
 import Pages.HomePage;
 import Pages.LoginPage;
+import Pages.MainPage;
 import org.testng.annotations.Test;
 
-
+//email ve password alanlarına erişimi şu inheritance düzeni sağlıyor    Data  > BaseLibrary > BaseTests  > UserTests
 //BaseTests classımız bizim parent classımız olduğu için onun temel özelliklerini, child (sub) class olan bu classta kullanıcaz (inheritance)
 //böylece Basetests içindeki ögeleri ( @before , @after ) doğrudan burada kullanabiliriz
 
@@ -19,7 +20,7 @@ public class UserTests extends BaseTest {
 
     @Test(description ="Başarılı Login Kullanıcı Giriş Kontrolü")
     public void loginSuccessful() throws InterruptedException {
-        //email ve password alanlarına erişimi şu inheritance düzeni sağlıyor --->  Data  > BaseLibrary > BaseTests  > UserTests
+
         loginPage.emailDoldur(email); //loginPage'in türündeki bu metodu BaseLibrary'deki driver & Data'daki email ile doldurulur
         loginPage.passwordDoldur( password);  //loginPage'in türündeki bu metodu BaseLibrary'deki driver & Data'daki password ile doldurulur
         loginPage.clickLoginButton();   //loginPage'in türündeki bu metodu BaseLibrary'deki driver ile doldurulur
@@ -32,12 +33,13 @@ public class UserTests extends BaseTest {
 
        //trendyol sayasında "Giriş yap" textinin login olunca "Hesabım" textine dönüşüp dönüşmediğinin kontrolü için: getText()  (bekleme de eklenmeli)
         sleepThread(4000); //* throws InterruptedException  -> çok önemli
+
         homePage.hesabimControl();
     }
 
 
   //test senaryosu için login unsuccessful (yanlış password) metodu:
-    @Test
+    @Test(description ="Hatalı Kullanıcı Girişi")
     public void notValidLoginWithWrongPassword() throws InterruptedException {
         loginPage.emailDoldur(email)
                  .passwordDoldur("431457")   // (hata vermesi bekleniyor)
@@ -48,8 +50,9 @@ public class UserTests extends BaseTest {
     }
 
 
+
     //test senaryosu için login unsuccessful (yanlış e-mail) metodu:
-    @Test
+    @Test(description ="Sistemde Kayıtlı Olmayan Email Giriş Kontrolü")
     public void notValidLoginWithWrongEMail() throws InterruptedException {
         loginPage.emailDoldur("ecemnaz@gmail.com") // (hata vermesi bekleniyor)
                  .passwordDoldur("431457ecem")
@@ -60,8 +63,9 @@ public class UserTests extends BaseTest {
     }
 
 
+
     //test senaryosu için login unsuccessful (boşluk kontrolü  ) metodu:
-    @Test
+    @Test(description ="Boş Karakter Kontrolü")
     public void notValidLoginRequiredBlankControl() throws InterruptedException {
         //email & password alanlarının boş girilmesi
         loginPage.emailDoldur("")       // (hata vermesi bekleniyor)
@@ -87,8 +91,9 @@ public class UserTests extends BaseTest {
     }
 
 
+
     //test senaryosu için login minimum karakter kontrolü (e-mail - password için) metodu:
-    @Test
+    @Test(description ="Minimum Karakter Kontrolü")
     public void minCharacterControl() throws InterruptedException {
         //email & password alanlarının min karakter kontrolü
         loginPage.emailDoldur("1")
@@ -113,7 +118,7 @@ public class UserTests extends BaseTest {
 
 
     //test senaryosu için login maximum karakter kontrolü (e-mail - password için) metodu:
-    @Test
+    @Test(description ="Maksimum Karakter Kontrolü")
     public void maxCharacterControl() throws InterruptedException {
         //email & password alanlarının max karakter kontrolü
         loginPage.emailDoldur("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@gmail.com") //(hata vermesi bekleniyor)

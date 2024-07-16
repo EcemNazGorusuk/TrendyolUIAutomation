@@ -1,6 +1,7 @@
 package Pages;
 //Login sayfasına ait gerekli tüm kodlar burada olacak
 import Base.BaseLibrary;
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
@@ -11,34 +12,29 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends BaseLibrary {
 
-
+    @Step("Email Alanı Doldurulur")
     public LoginPage emailDoldur(String email){
         //LoginPage türündeki metod
         driver.findElement(By.id("login-email")).sendKeys(email);   //idsi login-email olan input alanına mail adresini yazar
         return this;
     }
-    public LoginPage emailClean(){
-        //LoginPage türündeki metod
-        driver.findElement(By.id("login-email")).clear();   //idsi login-email olan input alanını temizler
-        return this;
-    }
 
+    @Step("Password Alanı Doldurulur")
     public LoginPage passwordDoldur(String password){
         //LoginPage türündeki metod
         driver.findElement(By.id("login-password-input")).sendKeys(password);   //idsi login-password-input olan input alanına şifreyi yazar
         return this;
     }
 
-    public LoginPage passwordClean(){
+    @Step("Login Butonuna Tıklanır")
+    public LoginPage clickLoginButton() throws InterruptedException {
         //LoginPage türündeki metod
-        driver.findElement(By.id("login-password-input")).clear();   //idsi login-password-input olan input alanını temizler
-        return this;
-    }
+        //driver.findElement(By.xpath("//*[@id=\"login-register\"]/div[3]/div[1]/form/button")).submit(); //"Giriş Yap" butonu için xpath kodu
+        //    //*[contains(text(),'Giriş Yap')]  -> bunu kullanıcaz
 
-    public LoginPage clickLoginButton(){
-        //LoginPage türündeki metod
-        driver.findElement(By.xpath("//*[@id=\"login-register\"]/div[3]/div[1]/form/button")).submit(); //giriş yap butonu için
+        driver.findElements(By.xpath("//*[contains(text(),'Giriş Yap')]")).get(3).click(); //"Giriş Yap" butonu için metin aratma işlemi | 3 -> 3.index
         return this;
+
     }
 
     public LoginPage getErrorMessage(String errMsg){
@@ -46,6 +42,18 @@ public class LoginPage extends BaseLibrary {
         String value= driver.findElement(By.cssSelector("[class='message']")).getText(); //value değişkeni gelen texti tutacak (actual result)
         Assert.assertEquals(errMsg, value);  //beklenen ve gerçek durumları karşılaştırırken kullanırız. (expected result)
         System.out.println(value);
+        return this;
+    }
+
+    public LoginPage emailClean(){
+        //LoginPage türündeki metod
+        driver.findElement(By.id("login-email")).clear();   //idsi login-email olan input alanını temizler
+        return this;
+    }
+
+    public LoginPage passwordClean(){
+        //LoginPage türündeki metod
+        driver.findElement(By.id("login-password-input")).clear();   //idsi login-password-input olan input alanını temizler
         return this;
     }
 }
