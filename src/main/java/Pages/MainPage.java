@@ -11,8 +11,7 @@ public class MainPage extends BaseLibrary {
         sleepThread(4000); //önemli
         WebElement element=driver.findElement(By.id("onetrust-accept-btn-handler")); //[id="onetrust-accept-btn-handler"]
         if(element.isDisplayed())
-           driver.findElement(By.id("onetrust-accept-btn-handler")).click(); //
-
+           driver.findElement(By.id("onetrust-accept-btn-handler")).click(); 
         return this;
     }
 
